@@ -7,8 +7,8 @@ const Main = () => {
 
     const contractAddress = '0x82D4567Be6537d8eB92A547c81bEdA170d54b832';
     const { contract } = useContract(contractAddress, ABI);
-    const { data: nfts } = useNFTs(contract);
-    console.log(nfts);
+    const { data: nfts } = useNFTs(contract, JSON.stringify(ABI));
+    console.log(JSON.stringify(nfts));
 
   return (
     <div id='main__content' className='main__content'>

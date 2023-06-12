@@ -5,10 +5,10 @@ import { Menu } from './';
 
 const Main = () => {
 
-    const contractAddress = '0x82D4567Be6537d8eB92A547c81bEdA170d54b832';
+    const contractAddress = '0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D';
     const { contract } = useContract(contractAddress, ABI);
     const { data: nfts } = useNFTs(contract);
-    console.log(nfts);
+    console.log(JSON.stringify(nfts));
 
   return (
     <div id='main__content' className='main__content'>
