@@ -1,0 +1,624 @@
+thehumanist
+thehumanist#1570
+
+thehumanist — 06/06/2023 4:49 PM
+ah
+CryptoPhoenix — 06/06/2023 4:49 PM
+I just mean a GUI
+thehumanist — 06/06/2023 4:49 PM
+haven't even looked into it
+Yeah it is odd
+CryptoPhoenix — 06/06/2023 4:50 PM
+Remix is crazy useful due to its GUI, but it's buggy and stupidly inefficient (I think it's literally running a blockchain in your browser)
+Hardhat is great for advanced technical stuff, but it's entirely CLI based, so you need to keep a cheat-sheet on hand for CLI commands, and testing your contracts involves a shitload of coding when you really just need to press a bunch of buttons and see what their results are lol
+Like, I know how important unit tests are, but holy hell are they ridiculously complex to code. I can learn/do them, but I refuse to write unit tests for anything that isn't a professional project.
+thehumanist — 06/06/2023 4:54 PM
+Yeah I hate unit testing lol
+What's the total supply of TurtleCoin? Will it have the ability to show how much of that supply has been claimed at any point?
+CryptoPhoenix — 06/06/2023 4:56 PM
+Oh, there is not
+You can the circulating supply though
+thehumanist — 06/06/2023 4:57 PM
+ok cool
+thehumanist — 06/06/2023 5:34 PM
+Image
+yea na?
+I will fill in that bottom left area with something random
+CryptoPhoenix — 06/06/2023 5:34 PM
+Muahahaha it's wonderful xD
+thehumanist — 06/06/2023 5:34 PM
+yeah? haha ok
+I got turtle cat transparent but a coin thingy would be cool there
+CryptoPhoenix — 06/06/2023 5:34 PM
+It would be
+Cmoooooon Java! xD
+thehumanist — 06/06/2023 5:35 PM
+You hit him up? 
+CryptoPhoenix — 06/06/2023 5:35 PM
+I did, but he hasn't responded lol
+thehumanist — 06/06/2023 5:35 PM
+Ah. Probably in bed haha
+CryptoPhoenix — 06/06/2023 5:35 PM
+We shall be the first to immortalize TurtleCat as a cryptocurrency lol
+thehumanist — 06/06/2023 5:36 PM
+Haha
+CryptoPhoenix — 06/06/2023 5:38 PM
+Alright, I now have a live contract for CrazyFaces. You can call safeMint and mint your very own CrazyFace 😄
+
+0x82D4567Be6537d8eB92A547c81bEdA170d54b832
+It works with OpenSea too 😉
+I actually had to quickly pop out a 6 minute patch video to correct a mistake I made when teaching how to create NFT metadata through Python. But, it's fixed now, and OpenSea actually lists the Traits of the NFTs as intended 😄
+But, as usual, OpenSea's testnet doesn't display the image for an unpredictable amount of time.
+Metamask is sure fast though, when you add it in there
+Well, mostly fast. Faster than OpenSea, at least.
+https://testnets.opensea.io/collection/crazyfaces-4
+OpenSea
+CrazyFaces - Collection | OpenSea
+OpenSea is the world's first and largest web3 marketplace for NFTs and crypto collectibles. Browse, create, buy, sell, and auction NFTs using OpenSea today.
+thehumanist
+ pinned 
+a message
+ to this channel. See all 
+pinned messages
+.
+ — 06/06/2023 5:41 PM
+thehumanist — 06/06/2023 5:41 PM
+Nice!
+Pinned so I don't lost it haha
+CryptoPhoenix — 06/06/2023 5:42 PM
+Do you need an IERC721 interface?
+thehumanist — 06/06/2023 5:42 PM
+Sure
+I don't think Ive ever worked with one
+CryptoPhoenix — 06/06/2023 5:42 PM
+I'll whip one up 🙂
+thehumanist — 06/06/2023 5:47 PM
+awesome
+CryptoPhoenix — 06/06/2023 5:48 PM
+There we go. The interface is kinda messy because the majority of it is the OpenZeppelin interface, so the comments are much much larger than the actual function headers. Not as compact as mine lol 
+[
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+Expand
+CrazyFaces_ABI.txt
+7 KB
+// Deployed Goerli 0x82D4567Be6537d8eB92A547c81bEdA170d54b832
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.9;
+
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/access/Ownable.sol";
+Expand
+CrazyFaces.sol
+2 KB
+There we go
+Ugh, wait
+There's no safeMint. WTF?
+// DEPLOYED GOERLI: 0x82D4567Be6537d8eB92A547c81bEdA170d54b832
+// SPDX-License-Identifier: MIT
+// OpenZeppelin Contracts (last updated v4.9.0) (token/ERC721/IERC721.sol)
+
+pragma solidity ^0.8.0;
+Expand
+ICrazyFaces.sol
+6 KB
+There we go, furreal this time xD
+You can copy-paste the interface into Remix and load from the deployed address, then mint a CrazyFace 😄
+Soon, the entire Goerli testnet will be infested with CrazyFaces... and I might actually regret creating them lol
+CryptoPhoenix — 06/06/2023 5:57 PM
+Ah snap, I just realized you have to be an owner to mint lol
+I'll mint you a CrazyFace..... or two..... 😉
+There you go 🙂
+I'll create another contract for the NFT minting dApp that will mint CrazyFaces when you pay it in TurtleCatCoins 😄
+Then, I'll transfer ownership to it. At that point, it'll be beyond my control.
+
+Probably should have opted for the Roles module, but oh well. This is just a test run.
+thehumanist — 06/06/2023 6:18 PM
+Lol thank you
+taking a while for the image to load hah
+CryptoPhoenix — 06/06/2023 6:25 PM
+Yeah, don't worry about it. As long as the metadata Traits loads, then it's fine 😄
+thehumanist — 06/06/2023 6:25 PM
+Image
+CryptoPhoenix — 06/06/2023 6:25 PM
+OpenSea's testnet is awful about loading IPFS content
+There you go 🙂
+What's the name?
+I gave them all bizarre names lol
+CryptoPhoenix — 06/06/2023 10:05 PM
+Alright, I have an NFT Minter contract up and running. I added you as an Admin, so you should be able to mint NFTs for free, but you can test the WBC token payment system as well (I have it set for 200 WBC, but you can change it if you like). As with all ERC20 tokens, you have to give it an allowance before it'll work, so that's annoying, but unavoidable.
+
+I'm including the MinterEscrow contract as a dependency, but it isn't really needed. The NFTMinter contract has everything you need to check and collect payments for yourself.
+
+The NFTMinter contract currently "owns" the CrazyFaces contract, which is why it can call safeMint. We will keep it that way unless we need to deploy a new NFTMinter contract.
+
+0xfce1B34c3f97C99B6086DD7d7ccD69F72eF0C57c
+// SPDX-License-Identifier: MIT
+// OpenZeppelin Contracts (last updated v4.8.0) (finance/PaymentSplitter.sol)
+pragma solidity ^0.8.0;
+
+import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
+import "@openzeppelin/contracts/utils/Address.sol";
+Expand
+MinterEscrow.sol
+6 KB
+// DEPLOYED GOERLI 0xfce1B34c3f97C99B6086DD7d7ccD69F72eF0C57c
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.18;
+
+import "../../crazy-faces-nft/contracts/CrazyFaces.sol";
+import "../../wbc-coin/contracts/ITurtleCatCoin.sol";
+Expand
+NFTMinter.sol
+4 KB
+thehumanist — 06/07/2023 7:28 AM
+Oh haha I had meant to mention that . Ferret Flemming lol
+thehumanist — 06/07/2023 2:12 PM
+Any word from Java?
+CryptoPhoenix — 06/07/2023 2:12 PM
+Nope nothing
+thehumanist — 06/07/2023 2:25 PM
+Send him silly gifs
+lol
+He loves that shit
+Image
+CryptoPhoenix — 06/07/2023 2:26 PM
+Lol! I can't think of any right now lol
+thehumanist — 06/07/2023 2:26 PM
+Got it reproduced in React
+CryptoPhoenix — 06/07/2023 2:26 PM
+Ooooh awesome
+thehumanist — 06/07/2023 2:26 PM
+Need to connect to everything
+but at least it looks the same
+search for 'peeking' in gifs. Send him a couple of those
+lol
+CryptoPhoenix — 06/07/2023 2:26 PM
+Lol
+Lol
+thehumanist — 06/07/2023 2:29 PM
+Yeah those lol
+there's plenty
+and then this is good too:
+CryptoPhoenix — 06/07/2023 2:30 PM
+Lol
+thehumanist — 06/07/2023 2:51 PM
+I tried.... no success:
+Image
+CryptoPhoenix — 06/07/2023 2:51 PM
+Lol
+thehumanist — 06/07/2023 2:51 PM
+Close kinda but also not lol
+CryptoPhoenix — 06/07/2023 2:51 PM
+Nice try at least
+The embossing is not sharp enough is all
+It might work if the lines could be beefed up
+But, the trick with embossing is that one side is dark, and the other is light 
+thehumanist — 06/07/2023 2:52 PM
+Yeah the selection tools aren't grabbing all the pieces of the body like I need either
+I also have like zero photoshop experience
+CryptoPhoenix — 06/07/2023 2:53 PM
+Yeah, it would be very difficult to pull off in a short amount of time
+thehumanist — 06/07/2023 3:06 PM
+I mean, if nothing else...
+Image
+🤷
+CryptoPhoenix — 06/07/2023 3:07 PM
+Hmmmm I wonder if everything could be cast as a shade of gold
+Or, greyscale it, then apply a color filter
+thehumanist — 06/07/2023 3:08 PM
+For some reason most filters just do this:
+Image
+THen one does this... which is horrifying and looks like an xray:
+Image
+lol
+﻿
+CryptoPhoenix
+CryptoPhoenix#1174
+[
+	{
+		"inputs": [],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "approved",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "Approval",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "operator",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"internalType": "bool",
+				"name": "approved",
+				"type": "bool"
+			}
+		],
+		"name": "ApprovalForAll",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "approve",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "previousOwner",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "OwnershipTransferred",
+		"type": "event"
+	},
+	{
+		"inputs": [],
+		"name": "renounceOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			}
+		],
+		"name": "safeMint",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "safeTransferFrom",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			},
+			{
+				"internalType": "bytes",
+				"name": "data",
+				"type": "bytes"
+			}
+		],
+		"name": "safeTransferFrom",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "operator",
+				"type": "address"
+			},
+			{
+				"internalType": "bool",
+				"name": "approved",
+				"type": "bool"
+			}
+		],
+		"name": "setApprovalForAll",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "Transfer",
+		"type": "event"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "from",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "to",
+				"type": "address"
+			},
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "transferFrom",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "newOwner",
+				"type": "address"
+			}
+		],
+		"name": "transferOwnership",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			}
+		],
+		"name": "balanceOf",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "getApproved",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "address",
+				"name": "owner",
+				"type": "address"
+			},
+			{
+				"internalType": "address",
+				"name": "operator",
+				"type": "address"
+			}
+		],
+		"name": "isApprovedForAll",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "name",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "ownerOf",
+		"outputs": [
+			{
+				"internalType": "address",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "bytes4",
+				"name": "interfaceId",
+				"type": "bytes4"
+			}
+		],
+		"name": "supportsInterface",
+		"outputs": [
+			{
+				"internalType": "bool",
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "symbol",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "uint256",
+				"name": "tokenId",
+				"type": "uint256"
+			}
+		],
+		"name": "tokenURI",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	}
+]
+CrazyFaces_ABI.txt
+7 KB

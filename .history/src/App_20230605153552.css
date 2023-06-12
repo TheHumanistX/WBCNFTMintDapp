@@ -1,0 +1,174 @@
+/* CSS RESET */
+  
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+  
+* {
+  margin: 0;
+}
+  
+html, body {
+  height: 100%;
+}
+  
+body {
+  line-height: 1.5;
+}
+  
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+  
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+  
+input, button, textarea, select {
+  font: inherit;
+}
+  
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+  
+/* Site CSS Code */
+
+body {
+  background-color: #000;
+  background-image: url('./assets/DarkBG.svg');
+  background-repeat: no-repeat;
+  color: #fff;
+  height: 200vh;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  min-height: 60px;
+  border-bottom: 3px solid hsl(29, 82%, 51%);
+  background-color: #000;
+}
+
+.header-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 10px;
+  justify-items: center;
+  align-items: center
+}
+
+.header-text {
+  background-color: rgb(28, 28, 31, 75%);
+  height: 60px;
+  border-radius: 10px;
+  padding: 0 20px;
+  padding-top: 15px;
+}
+
+.button-div {
+  position:fixed;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  background-color: hsl(0, 0%, 0%, 75%);
+  
+  width: 10%;
+  border-bottom-right-radius: 25px;
+  border-top-right-radius: 25px;
+  padding: 10px;
+}
+
+button {
+  background-color: hsl(0, 0%, 0%, 0%);
+  border: none;
+  font-weight: 700;
+  color:hsl(29, 82%, 51%);
+  cursor: pointer;
+}
+
+.nft-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-gap: 1rem;
+  padding: 1rem;
+  margin-top: 75px;
+}
+
+.nft-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+img {
+  border: 8px solid hsl(262, 53%, 51%);
+  border-radius: 35px;
+}
+
+.sidebar {
+  position: fixed;
+  top: 40%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 500px;
+  width: 300px;
+  overflow: hidden;
+  transition: width 0.5s;
+  
+}
+
+.sidebar.closed {
+  width: 50px;
+}
+
+.toggle-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 50px;
+  width: 50px;
+  font-size: 1.5em;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+  background-color: hsl(0, 0%, 0%, 75%);
+  border: none;
+}
+
+.menu-content {
+  height: 100%;
+  background-color: hsl(0, 0%, 0%, 75%);
+  padding: 10px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+.menu-container.fade-in {
+  opacity: 1;
+}
+.menu-container div {
+  color: #fff;
+}
+
+
+@media (max-width: 1675px) {
+  .header-grid {
+    grid-template-columns: repeat(2, minmax(400px, 1fr));
+  }
+}

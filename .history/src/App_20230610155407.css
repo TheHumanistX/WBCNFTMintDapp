@@ -1,0 +1,255 @@
+/* CSS RESET */
+  
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+  
+* {
+  margin: 0;
+}
+  
+html, body {
+  height: 100%;
+}
+  
+body {
+  line-height: 1.5;
+}
+  
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+  
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+  
+input, button, textarea, select {
+  font: inherit;
+}
+  
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+  
+/* Site CSS Code */
+
+@import url('https://fonts.googleapis.com/css2?family=Lilita+One&display=swap');
+
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: 'Lilita One', cursive;
+  /* background-image: url('./assets/LightBG3.svg'); */
+  /* background-image: url('./assets/AltLightBG.svg'); */
+  /* background-image: url('./assets/DarkBG3.svg'); */
+  /* background-image: url('./assets/AltDarkBG.svg'); */
+  background-repeat: no-repeat;
+  background: linear-gradient();
+  /* background-color: #fff; */
+  background-color: #000;
+  color: #fff;
+  height: 200vh;
+  overflow-x: hidden;
+}
+
+.app__container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.hero {
+  position: relative;
+  /* flex-grow: 1; */
+  height: 100vh;
+}
+.content-container {
+  height: 100%;
+}
+
+
+
+.main__content {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  /* flex-grow: 1; */
+  position: relative;
+}
+
+
+.menu__container {
+  height: 76vh;
+  width: 15vw;
+  /* border: 1px solid hsl(29, 82%, 51%); */
+  border-radius: 25px;
+  /* background-color: rgb(0, 0, 0, 15%); */
+  background-color: rgb(255, 255, 255, 15%);
+  backdrop-filter: blur(5px);
+}
+
+.crazyface__title {
+  display: flex;
+  position: relative;
+  color: fff;
+  font-size: 10rem;
+  z-index: 2;
+  /* top: 100px; */
+  left: 26vw;
+  letter-spacing: 5px;
+}
+
+.title__one {
+  position: relative;
+  border-top-left-radius: 40px;
+  border-bottom-left-radius: 40px;
+  background-color: rgb(140, 219, 48);
+  z-index: -10;
+}
+
+.title__two {
+  position: relative;
+  border-top-right-radius: 40px;
+  border-bottom-right-radius: 40px;
+  background-color: rgb(179, 55, 159);
+  z-index: -10;
+}
+
+.crazyface__one {
+  color: #B538A0;
+  z-index: 2;
+}
+
+.crazyface__two {
+  color: #8CDB30;
+  z-index: 2;
+}
+
+.crazyface__title.two{
+  background-color: #fff;
+  color: #000;
+}
+
+.crazyface {
+  position: absolute;
+  height: 500px;
+  z-index: 0;
+}
+
+.crazyface.one {
+  transform: rotate(-20deg) scale(0.6);
+  opacity: 0.6;
+  bottom: 0;
+  left: 15vw;
+}
+
+.crazyface.two {
+  transform: rotate(10deg) scale(0.9);
+  top: 13vh;  
+  left: 0;
+}
+
+.crazyface.three {
+  transform: rotate(45deg) scale(0.8);
+  opacity: 0.8;
+  top: 20vh;  
+  left: 30vw;
+}
+
+.crazyface.four {
+  transform: rotate(-20deg) scale(0.6);
+  opacity: 0.6;
+  bottom: 0;
+  right: 10vw;
+  top: 13vh;
+}
+
+.crazyface.five {
+  transform: rotate(30deg) scale(0.8);
+  opacity: 0.8;
+  z-index: -1;
+  bottom: -5vh;
+  right: -5vw;
+}
+
+.crazyface.six {
+  transform: rotate(-15deg);
+  right: 30vw;
+  bottom: 0;
+}
+
+
+
+
+
+/* .sidebar {
+  position: fixed;
+  top: 40%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 500px;
+  width: 300px;
+  overflow: hidden;
+  transition: width 0.5s;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.sidebar.closed {
+  width: 50px;
+} */
+
+.toggle-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 50px;
+  width: 50px;
+  font-size: 1.5em;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+  background-color: hsl(0, 0%, 0%, 0%);
+  border: none;
+}
+
+/* .menu-content {
+  height: 100%;
+  background-color: hsla(29, 100%, 50%, 0.1);
+  background-color: hsl(0, 0%, 0%, 0.1);
+  backdrop-filter: blur(5px);
+  padding: 10px;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+} */
+
+/* .menu-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+.menu-container.fade-in {
+  opacity: 1;
+} */
+/* .menu-container div {
+  color: #000;
+  color: #fff;
+} */
+
+
+@media (max-width: 1675px) {
+  .header-grid {
+    grid-template-columns: repeat(2, minmax(400px, 1fr));
+  }
+}
