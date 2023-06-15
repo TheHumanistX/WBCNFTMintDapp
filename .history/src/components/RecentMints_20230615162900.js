@@ -7,9 +7,9 @@ const RecentMints = ({ crazyFacesContract }) => {
     console.log('mintedToAddresses.length', mintedToAddresses.length);
     console.log('mintedToAddresses', mintedToAddresses);
     const recentMints = mintedToAddresses.slice(0, 5);
-    console.log('recentMints',recentMints);
+    console.log(recentMints);
 
-    const getNftID = (index) => mintedToAddresses.length - index;
+    const getNftID = (index) => mintedToAddresses.length - (mintedToAddresses.length - recentMints.length + index);
 
 
     return (

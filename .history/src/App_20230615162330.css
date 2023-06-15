@@ -107,6 +107,8 @@ a:visited {
   color: fff;
   font-size: clamp(8rem, 4vw + 3rem, 10rem);
   z-index: 2;
+  /* top: 100px; */
+  left: 24.5vw;
   letter-spacing: 5px;
 }
 
@@ -115,7 +117,7 @@ a:visited {
   border-top-left-radius: 40px;
   border-bottom-left-radius: 40px;
   background-color: rgb(140, 219, 48);
-  height: 20vh;
+  height: 25vh;
 }
 
 .crazyface__title-two {
@@ -125,7 +127,7 @@ a:visited {
   border-top-right-radius: 40px;
   border-bottom-right-radius: 40px;
   background-color: rgb(179, 55, 159);
-  height: 20vh;
+  height: 25vh;
 }
 
 .crazyface__one {
