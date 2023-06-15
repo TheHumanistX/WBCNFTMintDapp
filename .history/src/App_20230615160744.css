@@ -266,7 +266,7 @@ a:visited {
   border: none;
   border-radius: 25px;
   color: #fff;
-  font-size: clamp(5rem, 3vw + 2.5rem, 6rem);
+  font-size: clamp(5rem, 3vw + 3rem, 6rem);
   cursor: pointer;
 }
 
@@ -276,7 +276,7 @@ a:visited {
   align-self: start;
   display: flex;
   width: 100%;
-  font-size: clamp(3rem, 4vw + 0.5rem, 5rem);
+  font-size: 5rem;
 }
 
 .main__title-one {
@@ -345,7 +345,7 @@ a:visited {
 }
 
 .lastMinted-nft {
-  height: 15vw;
+  height: 34vh;
 }
 
 .mintwbcbox__container {
@@ -360,7 +360,7 @@ a:visited {
   border-radius: 25px;
   height: 100%;
   padding: 1rem;
-  font-size: clamp(1rem, 1.25vw + 0.5rem, 2rem);
+  font-size: clamp(1.5rem, 1vw + 1rem, 2rem);
   text-align: center;
 }
 
@@ -387,7 +387,7 @@ a:visited {
 }
 
 .opensea-logo {
-  width: 20vw;
+  width: 450px;
 }
 
 .recent-mints__container {
@@ -396,18 +396,18 @@ a:visited {
   border: 5px solid #8cdb30;
   border-radius: 25px;
   height: 100%;
-  padding: 0.25rem 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .recent-mints__title {
-  font-size: clamp(1rem, 1.5vw + 0.25rem, 2rem);
+  font-size: clamp(1.5rem, 1vw + 1rem, 2rem);
   text-align: center;
 }
 
 .transaction__list {
   display: flex;
   justify-content: space-around;
-  font-size: clamp(0.75rem, 1.25vw, 1.5rem);
+  font-size: 1.5rem;
 }
 
 .shares__container {
@@ -418,5 +418,5 @@ a:visited {
   border-radius: 25px;
   height: 100%;
   padding: 0.25rem 1rem;
-  font-size: clamp(1rem, 1vw + 0.25rem, 1.5rem);
+  font-size: 1.5rem;
 }
