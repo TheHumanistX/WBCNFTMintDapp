@@ -5,6 +5,7 @@ const LastMinted = ({ crazyFacesContract, lastID }) => {
     const [nftData, setNftData] = useState(null);
 
     const { data: nft } = useContractRead(crazyFacesContract, "tokenURI", [lastID - 1]);
+    console.log('NFT:', nft);
 
     useEffect(() => {
         const ipfsUrl = (ipfsUrl) => {

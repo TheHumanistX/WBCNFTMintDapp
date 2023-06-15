@@ -4,7 +4,7 @@ import { ConnectWallet, useAddress, useContract, useContractRead } from '@thirdw
 import { LastMinted, MintBox, MintWBCBox, RecentMints, Shares } from './';
 
 const Main = () => {
-
+    
     const crazyFacesContractAddress = '0xf94a9747C20076D56F84320aCF36431dAE557Fb7';
     const mintContractAddress = '0x43247D35a25d97ebe1360030b8Da2CE5Dfe7FAd6';
     const WBCContractAddress = '0xFB29697113015019c42E90fdBC94d9B4898D2602';
@@ -12,18 +12,22 @@ const Main = () => {
     const { contract: crazyFacesContract } = useContract(crazyFacesContractAddress);
     const { contract: mintContract } = useContract(mintContractAddress);
     const { contract: WBCContract } = useContract(WBCContractAddress);
-
-
+    
+  
     const { data } = useContractRead(crazyFacesContract, "getLastTokenID");
     const lastID = data ? data.toNumber() : '';
+    console.log('LastID Type: ', typeof(lastID))
+    console.log('LastID: ', lastID);
+
+    console.log('Last Minted Token ID: ', lastID)
 
     return (
         <div id='main__content' className='main__content-grid'>
-            <MintBox
-                mintContractAddress={mintContractAddress}
-                mintContract={mintContract}
-                WBCContract={WBCContract}
-                walletAddress={walletAddress}
+            <MintBox 
+            mintContractAddress={ mintContractAddress }
+            mintContract={ mintContract }
+            WBCContract={ WBCContract }
+            walletAddress={ walletAddress }
             />
             <div className='main__title'>
                 <div className='main__title-one'>
@@ -36,20 +40,20 @@ const Main = () => {
             <div className='connect-wallet__container'>
                 <ConnectWallet className='connect-wallet' />
             </div>
-            <LastMinted
-                crazyFacesContract={crazyFacesContract}
-                lastID={lastID}
+            <LastMinted 
+            crazyFacesContract={ crazyFacesContract } 
+            lastID={ lastID } 
             />
-            <MintWBCBox
-                walletAddress={walletAddress}
-                WBCContract={WBCContract}
+            <MintWBCBox 
+            walletAddress={ walletAddress } 
+            WBCContract={ WBCContract } 
             />
-            <RecentMints
-                crazyFacesContract={crazyFacesContract}
+            <RecentMints 
+            crazyFacesContract={ crazyFacesContract } 
             />
-            <Shares
-                mintContract={mintContract}
-                walletAddress={walletAddress}
+            <Shares 
+            mintContract={ mintContract } 
+            walletAddress={ walletAddress}            
             />
         </div>
     )

@@ -54,6 +54,9 @@ const MintWBCBox = ({ walletAddress, WBCContract }) => {
         }
     }
 
+
+
+
     return (
         <div className='mintwbcbox__container'>
             <div>

@@ -6,8 +6,8 @@ const RecentMints = ({ crazyFacesContract }) => {
     const mintedToAddresses = allTransferEvents ? allTransferEvents.map(event => event.data ? event.data.to : null) : [];
     const recentMints = mintedToAddresses.slice(0, 5);
 
-    const getNftID = (index) => mintedToAddresses.length - (mintedToAddresses.length - recentMints.length + index);
-
+    const getNftID = ( index ) => mintedToAddresses.length - (mintedToAddresses.length - recentMints.length + index);
+     
 
     return (
         <div className='recent-mints__container'>

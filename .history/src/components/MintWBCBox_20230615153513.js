@@ -18,9 +18,7 @@ const MintWBCBox = ({ walletAddress, WBCContract }) => {
     const callToMint = async () => {
         try {
             const data = await mint([walletAddress]);
-            console.info("contract call successs", data);
         } catch (err) {
-            console.error("contract call failure", err);
         }
     }
 
@@ -53,6 +51,9 @@ const MintWBCBox = ({ walletAddress, WBCContract }) => {
             )
         }
     }
+
+
+
 
     return (
         <div className='mintwbcbox__container'>
