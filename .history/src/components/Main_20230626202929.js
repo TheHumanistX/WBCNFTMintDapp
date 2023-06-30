@@ -55,7 +55,6 @@ const Main = () => {
             
             <RecentMints
                 crazyFacesContractAddress={crazyFacesContractAddress}
-                crazyFacesContract={crazyFacesContract}
                 lastID={lastID}
             />
             

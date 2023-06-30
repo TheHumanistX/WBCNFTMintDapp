@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
+import { ethers } from 'ethers';
 import { useContractEvents } from '@thirdweb-dev/react'
+import abi from '../abi/abi';
 
 const RecentMints = ({ crazyFacesContract }) => {
   const { data: allTransferEvents } = useContractEvents(crazyFacesContract, "Transfer");

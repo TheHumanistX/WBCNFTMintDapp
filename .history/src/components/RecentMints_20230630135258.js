@@ -1,6 +1,7 @@
 import React from 'react';
 import { useContractEvents } from '@thirdweb-dev/react'
 
+
 const RecentMints = ({ crazyFacesContract }) => {
   const { data: allTransferEvents } = useContractEvents(crazyFacesContract, "Transfer");
 
