@@ -61,7 +61,6 @@ export const EthersProvider = ({ children }) => {
         window.ethereum.on('chainChanged', (networkIdHex) => {
             const networkId = parseInt(networkIdHex, 16);
             ethersDataSetup(networkId);
-            window.location.reload()
         });
 
         window.ethereum.on('accountsChanged', async (accounts) => {
@@ -81,7 +80,6 @@ export const EthersProvider = ({ children }) => {
                     console.log('EthersContext walletAddress updated to: ', walletAddress)
                     setSigner(signer);
                     setWalletAddress(walletAddress);
-                    window.location.reload()
                 } catch (error) {
                     if (error.code === 4001) {
                         // User rejected request
