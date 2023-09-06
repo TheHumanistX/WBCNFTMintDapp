@@ -1,0 +1,1 @@
+export { switchToGoerli } from './switchToGoerli';

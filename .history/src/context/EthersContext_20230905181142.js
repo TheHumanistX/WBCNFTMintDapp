@@ -3,19 +3,9 @@ import { ethers } from 'ethers';
 import { ETHEREUM_NULL_ADDRESS, SUPPORTED_NETWORK_ID } from '../constants';
 import { NftProvider, TokenProvider } from './';
 
-
-// ! Today figured out handling the app if the user loads the app on the wrong chain.
-// ! The app will not load if the user is on the wrong chain.
-// ! The app will not load if the user switches to the wrong chain.
-// ! The app will show a blank page with the text 'WRONG CHAIN' and a button to switch to the correct chain.
-// ! Wrapped the entire app so that it doesn't load if the chain is wrong.
-// ! Since the app is 200vh in height, had to make it instantly scroll to the top of the page when the user switches chains.
-// ! We do have the 200vh scroll bar on the right so maybe I figure that out in the morning then I need to look over this context and see if it can be refactored/cleaned up some.
-
-
 const EthersContext = createContext();
 
-export const EthersProvider = ({ setAppCanLoad, children }) => {
+export const EthersProvider = ({ children }) => {
 
     const [triggerUpdate, setTriggerUpdate] = useState(true);
     const [isProviderReady, setIsProviderReady] = useState(false);
@@ -35,29 +25,23 @@ export const EthersProvider = ({ setAppCanLoad, children }) => {
         const network = await provider?.getNetwork();
 
         if ( network?.chainId !== SUPPORTED_NETWORK_ID ) {
-            setIsProviderReady(false)
-            window.scrollTo({
-                top: 0,
-                left: 0,
-                behavior: 'instant'
-            }); 
-            setAppCanLoad(false)
-            return false;
+            console.log('EthersContext - updateProviderAndNetwork - network.chainId: ', network.chainId)
+            console.log('Please switch to the supported network!')
+            console.log('Exiting updateProviderAndNetwork early...')
+            return;
         }
 
         setNetwork(network);
         setChainName(network ? network.name : null);
         setProvider(provider);
-        return true;
     }
 
     const updateSignerAndAccount = async () => {
-        if (!provider) return false;
+        console.log('EthersContext - updateSignerAndAccount - provider: ', provider)
         const signer = provider?.getSigner();
         const walletAddress = await signer?.getAddress();
         setSigner(signer);
         setWalletAddress(walletAddress);
-        return true;
     }
 
     const handleChainChange = async (networkIdHex) => {
@@ -67,30 +51,25 @@ export const EthersProvider = ({ setAppCanLoad, children }) => {
             setTriggerUpdate(prevState => !prevState);
             setIsProviderReady(false);
             setIsSignerReady(false);
-            window.scrollTo(0, 0); 
-            window.location.hash = "";
             window.location.reload()
         } else {
-            window.scrollTo({
-                top: 0,
-                left: 0,
-                behavior: 'instant'
-            }); 
-            setAppCanLoad(false)
+            alert('Please switch to the Goerli network!')
         }
 
     };
 
     const handleAccountsChanged = async (accounts) => {
+        console.log('EthersContext accountsChanged entered on account change...')
         if (accounts.length === 0) {
-            console.log('Please connect to MetaMask.')
-            alert('Your MetaMask is not connected anymore. Please unlock or reconnect.') 
-            setWalletAddress(null)
-            setSigner(null)
+            console.log('Please connect to MetaMask.');
+            alert('Your MetaMask is not connected anymore. Please unlock or reconnect.'); // display an alert
+            // handle account disconnection...
+            setWalletAddress(null);
+            setSigner(null);
         } else if (accounts[0] !== walletAddress) {
-            setTriggerUpdate(prevState => !prevState)
-            setIsProviderReady(false)
-            setIsSignerReady(false)
+            setTriggerUpdate(prevState => !prevState);
+            setIsProviderReady(false);
+            setIsSignerReady(false);
         }
     };
 
@@ -110,8 +89,12 @@ export const EthersProvider = ({ setAppCanLoad, children }) => {
         if (window.ethereum) {
             const setupProviderAndNetwork = async () => {
                 try {
-                    const providerReady = await updateProviderAndNetwork()
-                    if (providerReady) setIsProviderReady(true);
+                    console.log('EthersContext - Entered first try block in ethersDataSetup, right before setting up provider.')
+                    await updateProviderAndNetwork()
+                    console.log('EthersContext - updateProviderAndNetwork completed successfully.')
+                    console.log('Setting isProviderReady to true.')
+                    setIsProviderReady(true);
+                    console.log('EthersContext - isProviderReady set to true')
                 } catch (err) {
                     if (err.code === 4001) {
                         // User rejected request
@@ -131,8 +114,8 @@ export const EthersProvider = ({ setAppCanLoad, children }) => {
             const setupSignerAndAccount = async () => {
                 try {
                     console.log('EthersContext - Entered second try block in ethersDataSetup, right before setting up wallet.')
-                    const signerReady = await updateSignerAndAccount(provider)
-                    if (signerReady) setIsSignerReady(true);
+                    await updateSignerAndAccount(provider)
+                    setIsSignerReady(true);
                 } catch (err) {
                     if (err.code === 4001) {
                         // User rejected request

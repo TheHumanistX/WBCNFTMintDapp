@@ -33,12 +33,10 @@ const Main = () => {
                 </>
             )
                 : (
-                    <div className='loading__container'>
-                        <span className='loading__text'>Loading...</span>
-                    </div>
+                    <div className='app-not-loaded'>WRONG CHAIN</div>
                 )
             }
-
+            
 
         </div>
     )

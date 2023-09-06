@@ -17,16 +17,15 @@ export const NftProvider = ({ isSignerReady, signer, children }) => {
     const mintContractAddress = MINTING_CONTRACT_ADDRESS;
 
     const updateContracts = async () => {
-        if (!signer) return false;
         const crazyFacesContract = new ethers.Contract(nftContractAddress, nftABI, signer);
         const mintContract = new ethers.Contract(mintContractAddress, mintABI, signer);
         setCrazyFacesContract(crazyFacesContract);
         setMintContract(mintContract);
-        return true;
     }
 
     const updateNftData = async () => {
-        const totalSupply = await crazyFacesContract?.totalSupply();
+        const totalSupply = await crazyFacesContract.totalSupply();
+        console.log('NFTContext - totalSupply: ', totalSupply.toNumber())
         setTotalSupply(totalSupply.toNumber());
     }
 
@@ -35,8 +34,8 @@ export const NftProvider = ({ isSignerReady, signer, children }) => {
         if (isSignerReady) {
             const setupContracts = async () => {
                 try {
-                    const nftContractReady = await updateContracts();
-                    if (nftContractReady) setIsNftContractReady(true)
+                    await updateContracts();
+                    setIsNftContractReady(true)
                 } catch (err) {
                     if (err.code === 4001) {
                         // User rejected request

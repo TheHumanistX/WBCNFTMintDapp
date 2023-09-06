@@ -75,25 +75,6 @@ a:visited {
   height: 100%;
 }
 
-.app-not-loaded {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-  font-size: 4rem;
-}
-
-.chain-switch__button {
-  border: 5px solid #B538A0;
-  border-radius: 25px;
-  color: #8CDB30;
-  background: none;
-  outline: none;
-  padding: 0 3vw;
-  cursor: pointer;
-}
-
 .hero {
   position: relative;
   /* flex-grow: 1; */
@@ -254,7 +235,7 @@ a:visited {
   padding: 40px;
 }
 
-.loading__container {
+.app-not-loaded {
   grid-column: 1 / 13;
   display: flex;
   flex-direction: column;
@@ -262,6 +243,16 @@ a:visited {
   align-items: center;
   justify-content: center;
   font-size: 4rem;
+}
+
+.chain-switch__button {
+  border: 5px solid #B538A0;
+  border-radius: 25px;
+  color: #8CDB30;
+  background: none;
+  outline: none;
+  padding: 0 3vw;
+  cursor: pointer;
 }
 
 .mintbox__container {

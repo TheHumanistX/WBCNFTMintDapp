@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { ThirdwebProvider } from "@thirdweb-dev/react";
 import { EthersProvider } from './context';
 import { Main, Intro } from "./components";
-import { switchToGoerli } from './utils';
+import { switchToGoerli } from '../utils';
 import './App.css';
 
 const activeChain = "goerli"

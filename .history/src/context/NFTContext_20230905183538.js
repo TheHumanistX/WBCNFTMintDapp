@@ -26,7 +26,8 @@ export const NftProvider = ({ isSignerReady, signer, children }) => {
     }
 
     const updateNftData = async () => {
-        const totalSupply = await crazyFacesContract?.totalSupply();
+        const totalSupply = await crazyFacesContract.totalSupply();
+        console.log('NFTContext - totalSupply: ', totalSupply.toNumber())
         setTotalSupply(totalSupply.toNumber());
     }
 
